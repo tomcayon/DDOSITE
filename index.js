@@ -1,7 +1,7 @@
 function onstart(){
     document.getElementById('status').innerHTML = '';
     document.getElementById('location').innerHTML = '';
-    fetch('API/api.json')
+    fetch('./api.json')
     .then( res => res.json())
     .then(api => {
         key = api.key;
@@ -56,7 +56,7 @@ async function sendip(ev){
                 var audio = new Audio('./sound.mp3');
                 audio.play();
                 document.body.style.backgroundImage = "url('https://media.makeameme.org/created/youve-been-trolled-k5g4hx.jpg')";
-            },5000)
+            },17000)
 
         },15500)
 
