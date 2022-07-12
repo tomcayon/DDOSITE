@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <Title>DDOSITE</Title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body onload="onstart()">
+    <div class="title">DDOSITE</div>
+    <form onsubmit="sendip(event)">
+        <input class="input" type="text" name="IP" id="ip" placeholder="IP: 0.0.0.0" pattern="((^|\.)((25[0-5]_*)|(2[0-4]\d_*)|(1\d\d_*)|([1-9]?\d_*))){4}_*$" required>
+        <!-- <a class="button" onclick="sendip(event)">DDOS</a> -->
+        <input class="button" type="submit" value="DDOS">
+    </form>
+    <div class="center" id="location"></div>
+    <div id="loading" class="loading">
+        <div class="background">
+            <div id="myBar" class="bar" style="height:24px;width:0;"></div>
+        </div>
+    </div>
+    <div class="center" id="status"></div>
+</body>
