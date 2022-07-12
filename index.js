@@ -50,14 +50,16 @@ async function sendip(ev){
         setTimeout(function(){
             document.getElementById('loading').style.opacity = '0';
             document.getElementById('status').innerHTML = 'Success !';
+
+            setTimeout(function(){
+                window.open('https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000030939443/');
+                var audio = new Audio('./sound.mp3');
+                audio.play();
+                document.body.style.backgroundImage = "url('https://media.makeameme.org/created/youve-been-trolled-k5g4hx.jpg')";
+            },17000)
+
         },15500)
 
-        setTimeout(function(){
-            window.open('https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000030939443/');
-            var audio = new Audio('./sound.mp3');
-            audio.play();
-            document.body.style.backgroundImage = "url('https://media.makeameme.org/created/youve-been-trolled-k5g4hx.jpg')";
-        },17000)
     }
     else{
         document.getElementById('status').innerHTML = 'Request failed !';
