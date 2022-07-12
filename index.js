@@ -56,7 +56,7 @@ async function sendip(ev){
                 var audio = new Audio('./sound.mp3');
                 audio.play();
                 document.body.style.backgroundImage = "url('https://media.makeameme.org/created/youve-been-trolled-k5g4hx.jpg')";
-            },17000)
+            },5000)
 
         },15500)
 
