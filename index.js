@@ -1,9 +1,16 @@
 function onstart(){
     document.getElementById('status').innerHTML = '';
     document.getElementById('location').innerHTML = '';
+    fetch('./api.json')
+    .then( res => res.json())
+    .then(api => {
+        key = api.key;
+    });
 }
 
 var city =""
+
+var key = null;
 
 var stop = false;
 
@@ -20,7 +27,7 @@ async function sendip(ev){
 
     onstart();
 
-    fetch('https://extreme-ip-lookup.com/json/'+IP+'?key=upNQnug6yt6l5Dhpswks')
+    fetch('https://extreme-ip-lookup.com/json/'+IP+'?key='+key)
     .then( res => res.json())
     .then(response => {
         console.log("Country: ", response.city);
@@ -46,7 +53,7 @@ async function sendip(ev){
         },15500)
 
         setTimeout(function(){
-            window.open('https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000030939443/','_blank');
+            window.open('https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000030939443/');
             var audio = new Audio('./sound.mp3');
             audio.play();
             document.body.style.backgroundImage = "url('https://media.makeameme.org/created/youve-been-trolled-k5g4hx.jpg')";
