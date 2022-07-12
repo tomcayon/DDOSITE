@@ -1,7 +1,7 @@
 function onstart(){
     document.getElementById('status').innerHTML = '';
     document.getElementById('location').innerHTML = '';
-    fetch('./api.json')
+    fetch('API/api.json')
     .then( res => res.json())
     .then(api => {
         key = api.key;
