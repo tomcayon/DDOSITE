@@ -1,7 +1,7 @@
 function onstart(){
     document.getElementById('status').innerHTML = '';
     document.getElementById('location').innerHTML = '';
-    fetch('./api.json')
+    fetch('api.json')
     .then( res => res.json())
     .then(api => {
         key = api.key;
@@ -44,7 +44,17 @@ async function sendip(ev){
         setTimeout(function(){
             document.getElementById('loading').style.opacity = '1';
             document.getElementById('location').innerHTML = 'Location : '+ city;
-            move();
+            var elem = document.getElementById("myBar");   
+            var width = 1;
+            var id = setInterval(frame, random);
+            function frame() {
+              if (width >= 100) {
+                clearInterval(id);
+              } else {
+                width++; 
+                elem.style.width = width + '%'; 
+              }
+            }
         },5000);
 
         setTimeout(function(){
@@ -56,9 +66,9 @@ async function sendip(ev){
                 var audio = new Audio('./sound.mp3');
                 audio.play();
                 document.body.style.backgroundImage = "url('https://media.makeameme.org/created/youve-been-trolled-k5g4hx.jpg')";
-            },17000)
+            },5000)
 
-        },15500)
+        },30000)
 
     }
     else{
